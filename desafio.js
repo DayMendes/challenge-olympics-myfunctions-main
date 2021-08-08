@@ -11,6 +11,10 @@ let olympicsMedalTable = [
     { id: 10, country: "QUÊNIA", gold: 6, silver: 6, bronze: 1, continent: "AFRICA" },
 ];
 
+
+// retorna o valor atual da primeira iteração que
+// retornar um valor truthy
+
 Array.prototype.customFind = function(predicate){
     for(const i in this) {
         if(predicate(this[i])) {
@@ -18,6 +22,9 @@ Array.prototype.customFind = function(predicate){
         }
 }
 
+ //se pelo menos um return da iteração for truthy, ele
+//retorna true
+    
 Array.prototype.customSome = function (predicate) {
     for(const i of this) {
         if (predicate(i)) {
@@ -27,6 +34,9 @@ Array.prototype.customSome = function (predicate) {
     return false;
 }
 }
+
+//retorna uma array com a lista de valores que
+//durante a sua iteração retornaram um valor truthy.
 
 Array.prototype.customFilter = function (predicate) {
     let list = [];
@@ -39,6 +49,10 @@ Array.prototype.customFilter = function (predicate) {
 
 }
 
+// a função de callback é executada para cada item da array
+// retorna uma nova array com valores atualizados de
+// acordo com o return de cada iteração.
+
 Array.prototype.customMap = function (callback) {
     const list = [];
     for(const i of this) {
@@ -46,6 +60,10 @@ Array.prototype.customMap = function (callback) {
     }
     return list;
 }
+
+// executa a função de callback para cada item da Array
+// um valor especial existe na função de callback chamado de
+// acumulador, que é o retorno da iteração anterior.
 
 Array.prototype.customReduce = function (callback, initialValue) {
     let acc = initialValue !== undefined ||  0;
