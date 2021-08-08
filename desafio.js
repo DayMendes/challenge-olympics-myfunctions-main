@@ -83,7 +83,11 @@ console.log(`País africano: ${paisAfricano.country}`);
 
 // 2 - Crie um algoritmo que retorne o total de medalhas por país
 const medalhasPorPais = olympicsMedalTable
-.customMap(medalhas => medalhas.gold + medalhas.silver + medalhas.bronze);
+.customMap(medalhas =>{
+    const ttMedalhas ={}
+    ttMedalhas[medalhas.country] = medalhas.gold + medalhas.silver + medalhas.bronze;
+    return ttMedalhas;
+})
 console.log(medalhasPorPais);
 
 // 3 - Crie um algoritmo para encontrar os países que conquistaram mais que 10 medalhas de ouro
